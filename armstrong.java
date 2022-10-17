@@ -2,15 +2,18 @@ public class Armstrong {
 
     public static void main(String[] args) {
 
-        int number = 371, originalNumber, remainder, result = 0;
+        int number = 1634, originalNumber, remainder, result = 0, n = 0;
 
         originalNumber = number;
 
-        while (originalNumber != 0)
+        for (;originalNumber != 0; originalNumber /= 10, ++n);
+
+        originalNumber = number;
+
+        for (;originalNumber != 0; originalNumber /= 10)
         {
             remainder = originalNumber % 10;
-            result += Math.pow(remainder, 3);
-            originalNumber /= 10;
+            result += Math.pow(remainder, n);
         }
 
         if(result == number)
